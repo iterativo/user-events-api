@@ -1,0 +1,40 @@
+{
+    "name": "user-events-api",
+    "version": "1.0.0",
+    "description": "Simple REST API to manage Users with Events",
+    "main": "src/index.ts",
+    "scripts": {
+        "clean": "rimraf dist",
+        "lint": "tslint -c tslint.json -p tsconfig.json",
+        "tsc": "tsc",
+        "build": "npm-run-all clean lint tsc",
+        "dev:start": "npm-run-all build start",
+        "dev": "nodemon --watch src -e ts --exec npm run dev:start",
+        "start": "ts-node .",
+        "test": "jest --watch"
+    },
+    "keywords": [
+        "express-api",
+        "typescript"
+    ],
+    "author": "iterativo",
+    "license": "ISC",
+    "dependencies": {
+        "config": "^3.2.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@types/config": "0.0.34",
+        "@types/express": "^4.17.0",
+        "@types/jest": "^24.0.15",
+        "@types/node": "^12.6.2",
+        "jest": "^24.8.0",
+        "nodemon": "^1.19.1",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^2.6.3",
+        "ts-jest": "^24.0.2",
+        "ts-node": "^8.3.0",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.3"
+    }
+}
