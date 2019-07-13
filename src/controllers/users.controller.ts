@@ -16,6 +16,7 @@ router.post("/", (req, res) => {
         const user: IUser = {
             email: req.body.email,
             password: req.body.password,
+            phone: req.body.phone,
         };
         res.status(201).json({
             userId: createUser(user),

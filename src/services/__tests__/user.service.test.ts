@@ -23,6 +23,7 @@ describe("user.service", () => {
                 const newUser: IUser = {
                     email: faker.internet.email(),
                     password: faker.internet.password(),
+                    phone: "512-123-3212",
                 };
 
                 const newUserId = create(newUser);
@@ -91,6 +92,27 @@ describe("user.service", () => {
                 const newUser: IUser = {
                     email: faker.internet.email(),
                     password: undefined,
+                };
+
+                const createFn = () => { create(newUser); };
+
+                expect(createFn).toThrowError();
+                expect(store.users).toHaveLength(1);
+
+                newUser.password = "";
+
+                expect(createFn).toThrowError();
+                expect(store.users).toHaveLength(1);
+                expect(store.users).toMatchObject([existingUser]);
+            });
+        });
+
+        describe("when phone format is invalid", () => {
+            it("should not create the user", () => {
+                const newUser: IUser = {
+                    email: faker.internet.email(),
+                    password: faker.internet.password(),
+                    phone: "5121233212",
                 };
 
                 const createFn = () => { create(newUser); };
