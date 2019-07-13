@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "099597a2-ac96-47dc-afc1-afdeee11b826",
+		"name": "User-Events API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "events",
+							"item": [
+								{
+									"name": "List User Events",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "MUST PROVIDE THIS"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "List of Events for a single User",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/users/:id/events",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":id",
+														"events"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n [\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  },\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  }\n ],\n [\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  },\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  }\n ]\n]"
+										},
+										{
+											"name": "Unexpected error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/users/:id/events",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":id",
+														"events"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Add User Event",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"type\": \"FOO\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "MUST PROVIDE THIS"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unexpected error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/users/:id/events",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":id",
+														"events"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}"
+										},
+										{
+											"name": "Null response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/users/:id/events",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":id",
+														"events"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"foo@bar.com\",\n\t\"password\": \"pwd\",\n\t\"phone\": \"512-232-1231\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Null response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Return all Events for all Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/events",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/events?lastDayOnly=<boolean>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "lastDayOnly",
+									"value": "<boolean>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}"
+				},
+				{
+					"name": "List of Events",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/events?lastDayOnly=<boolean>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "lastDayOnly",
+									"value": "<boolean>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n [\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  },\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  }\n ],\n [\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  },\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  }\n ]\n]"
+				}
+			]
+		},
+		{
+			"name": "Return all Events for the last day",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/events?lastDayOnly=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"events"
+					],
+					"query": [
+						{
+							"key": "lastDayOnly",
+							"value": "true",
+							"description": "Limit to last-day events"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List of Events",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/events?lastDayOnly=<boolean>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "lastDayOnly",
+									"value": "<boolean>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n [\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  },\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  }\n ],\n [\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  },\n  {\n   \"id\": \"<uuid>\",\n   \"type\": \"<string>\",\n   \"user\": {\n    \"email\": \"<email>\",\n    \"password\": \"<password>\",\n    \"id\": \"<uuid>\",\n    \"phoneNumber\": \"<string>\"\n   },\n   \"created\": \"<date>\"\n  }\n ]\n]"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/events?lastDayOnly=<boolean>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "lastDayOnly",
+									"value": "<boolean>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "http://localhost:8080/v1",
+			"type": "string"
+		}
+	]
+}
