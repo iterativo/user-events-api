@@ -98,6 +98,9 @@ describe("event.service", () => {
 
         describe("when the event type is provided", () => {
             it("should create the event", () => {
+                const mockDate = 123;
+                jest.spyOn(Date, "now").mockReturnValue(mockDate);
+
                 const userId1 = faker.random.uuid();
                 const userId2 = faker.random.uuid();
 
@@ -112,6 +115,7 @@ describe("event.service", () => {
                 expect(validator.isUUID(newEventId)).toBeTruthy();
                 expect(store.events).toHaveLength(1);
                 expect(store.events).toMatchObject([user1Event1]);
+                expect(store.events.every((e) => e.created === mockDate)).toBeTruthy();
 
                 const user1Event2: IEvent = {
                     type: user1Event1.type,
@@ -124,6 +128,7 @@ describe("event.service", () => {
                 expect(validator.isUUID(newEventId)).toBeTruthy();
                 expect(store.events).toHaveLength(2);
                 expect(store.events).toMatchObject([user1Event1, user1Event2]);
+                expect(store.events.every((e) => e.created === mockDate)).toBeTruthy();
 
                 const user2Event: IEvent = {
                     type: "BAR",
@@ -136,6 +141,7 @@ describe("event.service", () => {
                 expect(validator.isUUID(newEventId)).toBeTruthy();
                 expect(store.events).toHaveLength(3);
                 expect(store.events).toMatchObject([user1Event1, user1Event2, user2Event]);
+                expect(store.events.every((e) => e.created === mockDate)).toBeTruthy();
             });
         });
     });

@@ -38,6 +38,7 @@ export const create: (event: IEvent) => string = (event) => {
     }
 
     event.id = uuid();
+    event.created = Date.now();
     store.events.push(event);
     return event.id;
 };
