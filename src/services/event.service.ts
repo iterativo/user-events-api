@@ -30,7 +30,7 @@ export const list: (options?: IEventListOptions) => IEvent[] = (options = {}) =>
 
 export const create: (event: IEvent) => string = (event) => {
     if (!event.type) {
-        throw new Error("Type must be provided");
+        throw new Error("Event type must be provided");
     }
 
     if (!validator.isUUID(event.userId)) {

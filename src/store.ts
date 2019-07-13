@@ -1,5 +1,5 @@
-import IEvent from "./models/event.model";
-import IUser from "./models/user.model";
+import { IEvent } from "./models/event.model";
+import { IUser } from "./models/user.model";
 
 const store: {
     events: IEvent[];
